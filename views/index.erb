@@ -1,16 +1,37 @@
-<h1> Enter the side lengths of a triangle!</h1>
+<h1>Enter your shipping requirements</h1>
 
 <form action="/output">
   <div class="row">
-    <div class="col">
-      <input type="number" class="form-control" name="side1" placeholder="Side 1">
+    <div class="col-lg-3">
+      <input type="number" class="form-control" name="length" placeholder="Length">
     </div>
-    <div class="col">
-      <input type="number" class="form-control" name="side2" placeholder="Side 2">
+    <div class="col-lg-3">
+      <input type="number" class="form-control" name="width" placeholder="Width">
     </div>
-    <div class="col">
-      <input type="number" class="form-control" name="side3" placeholder="Side 3">
+    <div class="col-lg-3">
+      <input type="number" class="form-control" name="height" placeholder="Height">
     </div>
-    <button type="submit" class="btn btn-info">Submit!</button>
+    <div class="col-lg-3">
+      <input type="number" class="form-control" name="weight" placeholder="Weight">
+    </div>
   </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <select name="distance" class="custom-select">
+        <option selected>Distance the package is traveling:</option>
+        <option value="0.5">Within your region</option>
+        <option value="1">Within your state</option>
+        <option value="1.5">Within your country</option>
+      </select>
+    </div>
+    <div class="col-lg-6">
+      <select name="speed" class="custom-select">
+        <option selected>Shipping speed:</option>
+        <option value="0.5">Standard (4-5 days)</option>
+        <option value="1">Expedited (2 days)</option>
+        <option value="1.5">Overnight (1 day)</option>
+      </select>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-info">Submit!</button>
 </form>

@@ -1,17 +1,15 @@
 require('sinatra')
 require('sinatra/reloader')
 also_reload('lib/**/*.rb')
-require('./lib/triangle')
+require('./lib/shipping')
 
 get('/') do
   erb(:index)
 end
 
 get('/output') do
-  tri = Triangle.new()
-  @side1 = params.fetch("side1")
-  @side2 = params.fetch("side2")
-  @side3 = params.fetch("side3")
-  @result = tri.sides(@side1.to_i, @side2.to_i, @side3.to_i)
+  the_package = Parcel.new(params.fetch("length").to_i,params.fetch("width").to_i, params.fetch("height").to_i, params.fetch("weight").to_i)
+  the_package.volume
+  @cost = the_package.cost_to_ship(params.fetch("speed").to_f,params.fetch("distance").to_f)
   erb(:output)
 end
